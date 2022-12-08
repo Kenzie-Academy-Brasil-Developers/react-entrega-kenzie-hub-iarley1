@@ -10,7 +10,6 @@ export function DashboardPage () {
     const navigate = useNavigate();
 
     const [profiles, setProfiles] = useState({})
-    const [loading, setLoading] = useState(false)
 
     useEffect(() => {
         async function getProfiles() {
@@ -23,8 +22,6 @@ export function DashboardPage () {
             setProfiles(res.data)
           } catch (error) {
             window.location.replace("/")
-          } finally {
-            setLoading(true)
           }
         }
         getProfiles();
@@ -40,7 +37,7 @@ export function DashboardPage () {
         window.location.replace("/")
         return
     }
-    if(loading){
+    
         return (
             <StyleDashboard>
               <Header effect={logout} text="Sair" type="button"/>
@@ -58,5 +55,5 @@ export function DashboardPage () {
               </div>
             </StyleDashboard>
         )
-    }    
+    
 }
