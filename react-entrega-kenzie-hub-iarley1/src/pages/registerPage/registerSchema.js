@@ -9,5 +9,6 @@ export const registerSchema = yup.object().shape({
     .matches(/(?=.*[A-Za-z])/, "É necessário pelo menos uma letra")
     .matches(/(?=.*[$*&@#.])/, "É necessario pelo menos um caractere especial"),
     contact: yup.string().required("Este campo é obrigatio"),
+    confirmPassword: yup.string().required("Este campo é obrigatorio").oneOf([yup.ref("password"), null], "As senhas não correspondem"),
     course_module: yup.string().required("Escolha uma opção")
 })

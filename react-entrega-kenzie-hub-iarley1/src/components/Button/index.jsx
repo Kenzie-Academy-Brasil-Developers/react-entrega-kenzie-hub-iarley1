@@ -1,5 +1,5 @@
-export function Button ({type, text, loanding}) {
+export function Button ({type, text, loanding, effect}) {
     return (
-        <button type={type} disabled={loanding}>{text}</button>
+        <button onClick={effect} type={type} disabled={loanding}>{text}</button>
     )
 }

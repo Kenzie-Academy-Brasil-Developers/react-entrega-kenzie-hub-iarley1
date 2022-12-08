@@ -1,11 +1,12 @@
-import { Link } from "react-router-dom";
 import { FormLogin } from "../../components/FormLogin";
+import { Container } from "../../styles/container";
 
 export function LoginPage () {
     return (
-        <>
-         <FormLogin />
-         <Link to="/register">Cadastre-se</Link>
-        </>
+        <Container>
+           <h1>Kenzie hub</h1>
+           <FormLogin />
+           
+        </Container>
     )
 }
