@@ -6,12 +6,11 @@ import { BrowserRouter } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 
 import 'react-toastify/dist/ReactToastify.min.css';
-import { GlobalStle } from './styles/globalStyles';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <GlobalStle />
+    
     <ToastContainer/>
     <BrowserRouter>
       <App />

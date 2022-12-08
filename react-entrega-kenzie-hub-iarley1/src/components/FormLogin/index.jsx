@@ -41,7 +41,6 @@ export function FormLogin() {
   }
 
   function submit(data) {
-    console.log(data);
     loginUser(data);
   }
 
