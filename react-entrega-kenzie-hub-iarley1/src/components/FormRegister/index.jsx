@@ -2,12 +2,14 @@ import { useForm } from "react-hook-form";
 import { registerSchema } from "../../pages/registerPage/registerSchema.js";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { Input } from "../Input";
-import { useNavigate } from "react-router-dom";
-import { api } from "../../api/api.js";
-import { toast } from "react-toastify";
-import { useState } from "react";
+// import { useNavigate } from "react-router-dom";
+// import { api } from "../../api/api.js";
+// import { toast } from "react-toastify";
+// import { useState } from "react";
 import { Button } from "../Button";
 import { StyleRegisterForm } from "./styles.js"
+import { useContext } from "react";
+import { UserContext } from "../../contexts/UserContext.jsx";
 
 export function FormRegister() {
   const { register, handleSubmit, formState: { errors }, reset,} = useForm({
@@ -15,30 +17,7 @@ export function FormRegister() {
     resolver: yupResolver(registerSchema),
   });
 
-  const [loading, setLoading] = useState(false);
-
-  const navigate = useNavigate();
-
-  async function registerUser(data) {
-    try {
-      setLoading(true);
-      const res = await api.post("/users", data);
-      toast.success("Conta criada com sucesso", {
-        autoClose: 1000,
-        theme: "dark",
-      });
-      setTimeout(() => {
-        navigate("/");
-      }, 2000);
-    } catch (error) {
-      toast.error(error.response.data.message, {
-        autoClose: 1000,
-        theme: "dark",
-      });
-    } finally {
-      setLoading(false);
-    }
-  }
+  const { registerUser, loading } = useContext(UserContext)
 
   function submit(data) {
     registerUser(data);
