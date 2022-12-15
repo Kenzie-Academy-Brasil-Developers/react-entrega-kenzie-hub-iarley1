@@ -18,7 +18,6 @@ export function Providers ({children}) {
           setLoading(true);
           const res = await api.post("/sessions", data)
           setUser(res.data.user)
-        //   console.log(userToken)
           localStorage.setItem("token", res.data.token)
           localStorage.setItem("userId", res.data.user.id)
           setTimeout(() => {
@@ -48,7 +47,6 @@ export function Providers ({children}) {
                     Authorization: `Bearer ${token}`
                 }
             })
-            console.log(res)
             setUser(res.data)
           } catch (error) {
             localStorage.clear()
@@ -57,7 +55,7 @@ export function Providers ({children}) {
           }
         }
         getUser();
-      }, []);
+      }, [user]);
 
       async function registerUser(data) {
         try {

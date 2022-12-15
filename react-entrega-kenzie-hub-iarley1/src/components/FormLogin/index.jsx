@@ -31,8 +31,7 @@ export function FormLogin() {
         <Input label="Senha" placeholder="Digite sua senha" type="password" loginRegister={register("password")}/>
         {errors.password && <p>{errors.password.message}</p>}
 
-        <Button type="submit" text={loading ? <div className="spinner"></div> : "Entrar"} loading={loading}
-        />
+        <Button type="submit" text={loading ? <div className="spinner"></div> : "Entrar"} loading={loading}/>
 
         <span>Ainda não possui uma conta?</span>
         

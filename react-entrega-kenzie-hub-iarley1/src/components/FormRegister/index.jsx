@@ -12,7 +12,7 @@ import { useContext } from "react";
 import { UserContext } from "../../contexts/UserContext.jsx";
 
 export function FormRegister() {
-  const { register, handleSubmit, formState: { errors }, reset,} = useForm({
+  const { register, handleSubmit, formState: { errors }, reset} = useForm({
     mode: "onBlur",
     resolver: yupResolver(registerSchema),
   });

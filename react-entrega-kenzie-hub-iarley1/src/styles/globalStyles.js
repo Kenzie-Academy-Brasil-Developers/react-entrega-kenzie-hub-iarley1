@@ -1,7 +1,7 @@
 import { createGlobalStyle } from "styled-components";
 
 export const GlobalStle = createGlobalStyle `
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap'); 
+    
 
     * {
         margin: 0;
